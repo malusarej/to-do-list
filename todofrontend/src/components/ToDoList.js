@@ -11,22 +11,22 @@ const ToDoList = () => {
     }, []);
 
     const fetchTodos = async () => {
-        const response = await axios.get('http://localhost:8000/api/todos/');
+        const response = await axios.get('http://ec2-52-35-9-38.us-west-2.compute.amazonaws.com/api/todos/');
         setTodos(response.data);
     };
 
     const addToDo = async (todo) => {
-        const response = await axios.post('http://localhost:8000/api/todos/', todo);
+        const response = await axios.post('http://ec2-52-35-9-38.us-west-2.compute.amazonaws.com/api/todos/', todo);
         setTodos([...todos, response.data]);
     };
 
     const updateToDo = async (id, updatedTodo) => {
-        const response = await axios.put(`http://localhost:8000/api/todos/${id}/`, updatedTodo);
+        const response = await axios.put(`http://ec2-52-35-9-38.us-west-2.compute.amazonaws.com/api/todos/${id}/`, updatedTodo);
         setTodos(todos.map(todo => (todo.id === id ? response.data : todo)));
     };
 
     const deleteToDo = async (id) => {
-        await axios.delete(`http://localhost:8000/api/todos/${id}/`);
+        await axios.delete(`http://ec2-52-35-9-38.us-west-2.compute.amazonaws.com/api/todos/${id}/`);
         setTodos(todos.filter(todo => todo.id !== id));
     };
 
