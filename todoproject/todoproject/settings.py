@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React frontend URL
+    "http://todo-frontend-list.s3-website-us-west-2.amazonaws.com",  # React frontend URL
 ]
 
 ROOT_URLCONF = 'todoproject.urls'
